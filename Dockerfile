@@ -8,7 +8,7 @@ COPY src /tmp/src/
 
 WORKDIR /tmp/
 
-#RUN mvn package
+RUN mvn package
 
 #pull base image
 
@@ -20,7 +20,7 @@ MAINTAINER vikashjavatech@gmail.com
 EXPOSE 8080
 
 #default command
-#CMD java -jar /data/hello-world-0.1.0.jar
+CMD java -jar /data/hello-world-0.1.0.jar
 
 #copy hello world to docker image from builder image
 
