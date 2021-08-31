@@ -54,6 +54,10 @@ node {
 
       sh "docker login -u admin -p admin123 ${dockerRepoUrl}"
       sh "docker tag ${dockerImageName} ${dockerImageTag}"
+	    steps{
+		    retry(3){
       sh "docker push ${dockerImageTag}"
+		    }
+	    }
     }
 }
