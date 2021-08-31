@@ -23,10 +23,10 @@ node {
     stage('Build Project') {
       // build project via maven
 	    steps{
-		    retry(3){
+		    retry(5){
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
 		    }
 	    }
-      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
     }
 	
 	stage('Publish Tests Results'){
