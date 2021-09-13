@@ -8,7 +8,7 @@ node {
     // ip address of the docker private repository(nexus)
     
     def dockerRepoUrl = "localhost:8083"
-    def dockerImageName = "hello-world-java"
+    def dockerImageName = "hello-world-java vikash"
     def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
     
     stage('Clone Repo') { // for display purposes
